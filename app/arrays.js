@@ -17,9 +17,24 @@ function rearranger(arr) {
 // Example:
 // input: [6, 4, 8, 33, 42, 10]
 // output: 42
-
+//llook up dictionaries
 function largestNum(arr) {
+    let results = 0;
+    // let duplicates = {};
+    // let duplicateNumber = 1;
+    for (let n = 0; n < arr.length; n++) {
+        let largestNumber = 0;
+        if (largestNumber < arr[n]) {
+            largestNumber = arr[n];
+            // } else if (largestNumber == arr[n]) {
+            //     duplicateNumber++;
+            //     duplicates[n] = duplicateNumber;
+        }
 
+        results = largestNumber;
+    }
+    return results;
+    // return duplicates;
 }
 
 
@@ -32,6 +47,12 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let newArr = []
+    arr.forEach(num => {
+        newArr.push(num * arr.length)
+    });
+
+    return newArr;
 }
 
 
@@ -45,7 +66,15 @@ function elemsTimesLength(arr) {
 // Primitive data types - https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 
 function arrayFlattener(arr) {
+    console.log(arr)
+    let newArray = arr.flat(Infinity)
+    newArray.forEach(item => {
+        if (typeof item == {}) {
+            newArray.splice(newarray[item])
+        }
+    })
 
+    return newArray;
 }
 
 
@@ -80,7 +109,12 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
-
+    let newFlight = flights.find(dest => dest.to == destination.toUpperCase())
+    if (firstClass) {
+        return newFlight.prices.firstClass
+    } else {
+        return newFlight.prices.standard
+    }
 }
 
 
