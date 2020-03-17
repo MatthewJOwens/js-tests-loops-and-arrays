@@ -66,15 +66,14 @@ function elemsTimesLength(arr) {
 // Primitive data types - https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 
 function arrayFlattener(arr) {
-    console.log(arr)
     let newArray = arr.flat(Infinity)
-    newArray.forEach(item => {
-        if (typeof item == {}) {
-            newArray.splice(newarray[item])
+    let result = []
+    for (let i = 0; i < newArray.length; i++) {
+        if (typeof newArray[i] != "object") {
+            result.push(newArray[i])
         }
-    })
-
-    return newArray;
+    }
+    return result;
 }
 
 
